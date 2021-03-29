@@ -17,6 +17,8 @@ function preload(){
   player_standing = loadImage("player_standing.png");
 }
 
+
+
 function setup() { 
   createCanvas(displayWidth, displayHeight);
   bg = createSprite(displayWidth-200,displayHeight/2-200,1000,displayHeight);
@@ -26,22 +28,22 @@ function setup() {
   player = createSprite(100,200,20,30);
   player.scale = 0.3;
   player.addImage("player_standing",player_standing);
-
-
-  camera.position.x = player.x;
-  camera.position.y = player.y;
-
-
-
 }
+
+
+
 function draw() { 
+  background('white');
+
+
   if(keyDown("right")){
     player.x = player.x+10;
   }
 
-  
-
   drawSprites();
+
+  camera.position.x = player.x;
+  camera.position.y = player.y;
   console.log(player.y);
 }
 
